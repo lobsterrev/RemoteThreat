@@ -40,7 +40,7 @@ RT_Wait(&exec, INFINITE);   // block until the remote code has run
 RT_Close(&exec);            // mark execution as invalid
 ```
 
-`RT_Create` returns a `RemoteThreat` struct. The remote stub allocation is intentionally not freed by `RT_Close` — the target process may still execute it asynchronously. Free it with `VirtualFreeEx` once you are certain execution has completed.
+`CreateRemoteThreat` returns a `RemoteThreat` struct. The remote stub allocation is intentionally not freed by `RT_Close` — the target process may still execute it asynchronously. Free it with `VirtualFreeEx` once you are certain execution has completed.
 
 ### Polling instead of blocking
 
