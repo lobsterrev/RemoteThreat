@@ -102,8 +102,10 @@ static HANDLE SetProcessCallback(HANDLE hProcess, LPVOID startAddress, LPVOID lP
         return INVALID_HANDLE_VALUE;
     }
 
-    if (outRemoteStub) *outRemoteStub = remoteBase;
-    return INVALID_HANDLE_VALUE;
+    if (outRemoteStub)
+        *outRemoteStub = remoteBase;
+
+    return remoteBase;
 #endif
 }
 
